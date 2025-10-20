@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>БлогПлатформа | Поделитесь своими мыслями</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Глобальные стили */
+        
+    </style>
+</head>
+<body>
+    <!-- Шапка с навигацией -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-pen-nib"></i>
+                    <span>БлогПлатформа</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Мой профиль</a></li>
+                    <li><a href="#"><i class="fas fa-plus-circle"></i> Создать пост</a></li>
+                </ul>
+                <div class="user-actions">
+                    <a href="#" class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Войти</a>
+                    <a href="#" class="btn"><i class="fas fa-user-plus"></i> Регистрация</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <div class="container">
+            <!-- Главная страница с лентой публикаций -->
+            <div id="home-page" class="page">
+                <div class="hero">
+                    <h1>Поделитесь своими мыслями с миром</h1>
+                    <p>Присоединяйтесь к сообществу авторов и читателей. Находите вдохновение, делитесь идеями и открывайте новые горизонты.</p>
+                    <a href="#" class="btn btn-secondary"><i class="fas fa-pen-fancy"></i> Начать писать</a>
+                </div>
+                
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Поиск по заголовку...">
+                </div>
+                
+                <div class="posts-grid">
+                    <!-- Пример публикации 1 -->
+                    <div class="post-card">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Изображение публикации" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Искусство минимализма в веб-дизайне</h3>
+                            <p class="post-text">Минимализм продолжает доминировать в современных тенденциях веб-дизайна. В этой статье мы рассмотрим ключевые принципы и лучшие практики...</p>
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> 15 мая 2023</span>
+                                <span class="post-likes"><i class="fas fa-heart"></i> 24</span>
+                            </div>
+                            <div class="post-actions">
+                                <button class="like-btn">
+                                    <i class="far fa-heart"></i> Лайк
+                                </button>
+                                <a href="#" class="author-btn">
+                                    <i class="fas fa-user-edit"></i> Автор
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Пример публикации 2 -->
+                    <div class="post-card">
+                        <div class="post-content">
+                            <h3 class="post-title">Путешествие как способ самопознания</h3>
+                            <p class="post-text">Как изменилось наше восприятие путешествий после пандемии? Личный опыт и размышления о том, что значит быть путешественником в современном мире...</p>
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> 12 мая 2023</span>
+                                <span class="post-likes"><i class="fas fa-heart"></i> 15</span>
+                            </div>
+                            <div class="post-actions">
+                                <button class="like-btn liked">
+                                    <i class="fas fa-heart"></i> Убрать лайк
+                                </button>
+                                <a href="#" class="author-btn">
+                                    <i class="fas fa-user-edit"></i> Автор
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Пример публикации 3 -->
+                    <div class="post-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Изображение публикации" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Нейросети в творчестве: друг или враг художника?</h3>
+                            <p class="post-text">С развитием искусственного интеллекта многие творческие профессии оказались под вопросом. Но так ли страшны нейросети, как их малюют?</p>
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> 10 мая 2023</span>
+                                <span class="post-likes"><i class="fas fa-heart"></i> 42</span>
+                            </div>
+                            <div class="post-actions">
+                                <button class="like-btn">
+                                    <i class="far fa-heart"></i> Лайк
+                                </button>
+                                <a href="#" class="author-btn">
+                                    <i class="fas fa-user-edit"></i> Автор
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Пагинация -->
+                <ul class="pagination">
+                    <li><a href="#" class="active">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
+            </div>
+
+            <!-- Страница авторизации -->
+            <div id="login-page" class="page" style="display: none;">
+                <div class="form-container">
+                    <h2 class="form-title">С возвращением!</h2>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" class="form-control" placeholder="Введите ваш email">
+                            <div class="error-message"><i class="fas fa-exclamation-circle"></i> Ошибка валидации</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Пароль</label>
+                            <input type="password" id="login-password" class="form-control" placeholder="Введите ваш пароль">
+                            <div class="error-message"><i class="fas fa-exclamation-circle"></i> Ошибка валидации</div>
+                        </div>
+                        <button type="submit" class="btn btn-block"><i class="fas fa-sign-in-alt"></i> Войти</button>
+                        <div class="text-center mt-3">
+                            <a href="#">Нет аккаунта? Зарегистрируйтесь</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Страница регистрации -->
+            <div id="register-page" class="page" style="display: none;">
+                <div class="form-container">
+                    <h2 class="form-title">Присоединяйтесь к нам!</h2>
+                    <form id="register-form">
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" class="form-control" placeholder="Введите ваш email">
+                            <div class="error-message"><i class="fas fa-exclamation-circle"></i> Ошибка валидации</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-username">Никнейм</label>
+                            <input type="text" id="register-username" class="form-control" placeholder="Введите ваш никнейм">
+                            <div class="error-message"><i class="fas fa-exclamation-circle"></i> Ошибка валидации</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Пароль</label>
+                            <input type="password" id="register-password" class="form-control" placeholder="Придумайте надежный пароль">
+                            <div class="error-message"><i class="fas fa-exclamation-circle"></i> Ошибка валидации</div>
+                        </div>
+                        <button type="submit" class="btn btn-block"><i class="fas fa-user-plus"></i> Зарегистрироваться</button>
+                        <div class="text-center mt-3">
+                            <a href="#">Уже есть аккаунт? Войдите</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Страница пользователя -->
+            <div id="profile-page" class="page" style="display: none;">
+                <div class="profile-header">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Аватар пользователя" class="profile-avatar">
+                    <h2 class="profile-username">Александр Петров</h2>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <div class="stat-value">24</div>
+                            <div class="stat-label">Публикации</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">1.2K</div>
+                            <div class="stat-label">Лайки</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">356</div>
+                            <div class="stat-label">Подписчики</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="posts-grid">
+                    <!-- Пример публикации пользователя 1 -->
+                    <div class="post-card">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Изображение публикации" class="post-image">
+                        <div class="post-content">
+                            <h3 class="post-title">Искусство минимализма в веб-дизайне</h3>
+                            <p class="post-text">Минимализм продолжает доминировать в современных тенденциях веб-дизайна. В этой статье мы рассмотрим ключевые принципы и лучшие практики...</p>
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> 15 мая 2023</span>
+                                <span class="post-likes"><i class="fas fa-heart"></i> 24</span>
+                            </div>
+                            <div class="post-actions">
+                                <button class="like-btn">
+                                    <i class="far fa-heart"></i> Лайк
+                                </button>
+                                <button class="btn btn-outline"><i class="fas fa-edit"></i> Редактировать</button>
+                                <button class="btn btn-danger"><i class="fas fa-trash"></i> Удалить</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Пример публикации пользователя 2 -->
+                    <div class="post-card">
+                        <div class="post-content">
+                            <h3 class="post-title">Публикация без изображения</h3>
+                            <p class="post-text">Текст моей публикации без изображения. Это пример текста публикации, который может быть достаточно длинным и содержать много информации...</p>
+                            <div class="post-meta">
+                                <span class="post-date"><i class="far fa-calendar"></i> 12 мая 2023</span>
+                                <span class="post-likes"><i class="fas fa-heart"></i> 15</span>
+                            </div>
+                            <div class="post-actions">
+                                <button class="like-btn liked">
+                                    <i class="fas fa-heart"></i> Убрать лайк
+                                </button>
+                                <button class="btn btn-outline"><i class="fas fa-edit"></i> Редактировать</button>
+                                <button class="btn btn-danger"><i class="fas fa-trash"></i> Удалить</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Пагинация -->
+                <ul class="pagination">
+                    <li><a href="#" class="active">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                </ul>
+            </div>
+
+            <!-- Создание/редактирование публикации -->
+            <div id="post-form-page" class="page" style="display: none;">
+                <div class="post-form">
+                    <h2 class="form-title">Создание публикации</h2>
+                    <form id="create-post-form">
+                        <div class="form-group">
+                            <label for="post-title">Заголовок</label>
+                            <input type="text" id="post-title" class="form-control" placeholder="Введите заголовок">
+                            <div class="error-message"><i class="fas fa-exclamation-circle"></i> Ошибка валидации</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-text">Текст публикации</label>
+                            <textarea id="post-text" class="form-control" rows="5" placeholder="Введите текст публикации"></textarea>
+                            <div class="error-message"><i class="fas fa-exclamation-circle"></i> Ошибка валидации</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-image">Изображение (опционально)</label>
+                            <div class="file-upload">
+                                <input type="file" id="post-image" accept="image/*">
+                                <label for="post-image" class="file-upload-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span>Перетащите изображение сюда или нажмите для выбора</span>
+                                </label>
+                            </div>
+                            <div class="error-message"><i class="fas fa-exclamation-circle"></i> Ошибка валидации</div>
+                        </div>
+                        <div class="form-group text-right">
+                            <button type="button" class="btn btn-outline"><i class="fas fa-times"></i> Отмена</button>
+                            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Опубликовать</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">
+                    <i class="fas fa-pen-nib"></i>
+                    <span>БлогПлатформа</span>
+                </a>
+                <ul class="footer-links">
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Правила</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Помощь</a></li>
+                </ul>
+                <p class="copyright">© 2023 БлогПлатформа. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Простая навигация между страницами (только для демонстрации верстки)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Показать главную страницу по умолчанию
+            document.getElementById('home-page').style.display = 'block';
+            
+            // Навигация по ссылкам в шапке
+            const navLinks = document.querySelectorAll('.nav-links a, .user-actions a');
+            const pages = document.querySelectorAll('.page');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Скрыть все страницы
+                    pages.forEach(page => {
+                        page.style.display = 'none';
+                    });
+                    
+                    // Показать соответствующую страницу
+                    if (this.textContent.includes('Главная') || this.innerHTML.includes('fa-home')) {
+                        document.getElementById('home-page').style.display = 'block';
+                    } else if (this.textContent.includes('Войти') || this.innerHTML.includes('fa-sign-in-alt')) {
+                        document.getElementById('login-page').style.display = 'block';
+                    } else if (this.textContent.includes('Регистрация') || this.innerHTML.includes('fa-user-plus')) {
+                        document.getElementById('register-page').style.display = 'block';
+                    } else if (this.textContent.includes('Мой профиль') || this.innerHTML.includes('fa-user')) {
+                        document.getElementById('profile-page').style.display = 'block';
+                    } else if (this.textContent.includes('Создать пост') || this.innerHTML.includes('fa-plus-circle')) {
+                        document.getElementById('post-form-page').style.display = 'block';
+                    }
+                    
+                    // Обновить активную ссылку в навигации
+                    document.querySelectorAll('.nav-links a').forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    
+                    if (this.classList.contains('nav-links')) {
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Переключение между формами входа и регистрации
+            const loginLink = document.querySelector('#login-page a');
+            const registerLink = document.querySelector('#register-page a');
+            
+            if (loginLink) {
+                loginLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('login-page').style.display = 'none';
+                    document.getElementById('register-page').style.display = 'block';
+                });
+            }
+            
+            if (registerLink) {
+                registerLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('register-page').style.display = 'none';
+                    document.getElementById('login-page').style.display = 'block';
+                });
+            }
+            
+            // Обработка кнопок лайка
+            const likeButtons = document.querySelectorAll('.like-btn');
+            likeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('liked');
+                    if (this.classList.contains('liked')) {
+                        this.innerHTML = '<i class="fas fa-heart"></i> Убрать лайк';
+                    } else {
+                        this.innerHTML = '<i class="far fa-heart"></i> Лайк';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
