@@ -20,6 +20,7 @@ export default function Post_form_page() {
         })
 
         if (response?.errors) {
+            console.log(response?.errors)
             setErrors(response.errors)
             return;
         }
@@ -37,12 +38,12 @@ export default function Post_form_page() {
                     <div className="form-group">
                         <label htmlFor="post-title">Заголовок</label>
                         <input type="text" id="post-title" className="form-control" placeholder="Введите заголовок" name="title"/>
-                        <div className="error-message"><i className="fas fa-exclamation-circle"></i>{errors?.message}</div>
+                        <div className="error-message"><i className="fas fa-exclamation-circle"></i>{errors?.title}</div>
                     </div>
                     <div className="form-group">
                         <label htmlFor="post-text">Текст публикации</label>
                         <textarea id="post-text" className="form-control" rows="5" placeholder="Введите текст публикации" name="description"></textarea>
-                        <div className="error-message"><i className="fas fa-exclamation-circle"></i>{errors?.message}</div>
+                        <div className="error-message"><i className="fas fa-exclamation-circle"></i>{errors?.description}</div>
                     </div>
                     <div className="form-group">
                         <label htmlFor="post-image">Изображение (опционально)</label>

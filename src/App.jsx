@@ -41,7 +41,7 @@ export const getUser = async () => {
       return null;
     }
 
-    const response = await $fetch("api-of/user/5", {
+    const response = await $fetch("api-of/user/8", {
       "method": "GET",
     })
     console.log(response)

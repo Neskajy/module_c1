@@ -32,10 +32,15 @@ export const $fetch = async (route, {method="GET", body={}} = {}) => {
 }
 
 async function exit(response) {
-    const json = await response.json();
+    let json
+    try {
+        json = await response.json();
+    } catch {
+        json = null
+    }
 
     if (!response.ok) {
-        console.error("$fetch exit error:", response)
+        console.error("$fetch exit error:", json)
     }
 
     return json;

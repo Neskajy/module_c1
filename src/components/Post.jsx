@@ -1,7 +1,11 @@
+import { useContext, useEffect, useState } from "react"
 import { $fetch } from "../fetch"
 import { Link } from "react-router-dom"
+import { UserContext } from "../App"
 
 export default function Post({post, doAfter, setAfter}) {
+
+    const {user} = useContext(UserContext)
 
     const like_post = async (post_id) => {
         const response = await $fetch(`api-of/posts/${post_id}/like`, {
@@ -23,8 +27,21 @@ export default function Post({post, doAfter, setAfter}) {
         setAfter(resultData)
     }
 
-    const delete_post = async (post_id) => {
-        // const response = await $fetch(`api-of`)
+    const [isUsersPost, setIsUsersPost] = useState(false);
+
+    useEffect(() => {
+        console.log(user)
+        user?.data?.posts.map((_post) => {
+            _post?.id === post?.id && setIsUsersPost(true)
+        })
+    })
+
+    async function delete_post() {
+        await $fetch(`api-of/posts/${post?.id}`, {
+            method: "DELETE",
+        });
+
+        alert("Пост удален")
     }
 
     return (
@@ -41,10 +58,16 @@ export default function Post({post, doAfter, setAfter}) {
                     <button className="like-btn" onClick={() => post?.liked_it ?  unlike_post(post.id) : like_post(post.id)}>
                         <i className="far fa-heart"></i>Лайк
                     </button>
-                    <Link to={`/post_edit/${post?.id}`}>
-                        <button className="btn btn-outline"><i className="fas fa-edit"></i>Редактировать</button>
-                    </Link>
-                    <button className="btn btn-danger"><i className="fas fa-trash"></i>Удалить</button>
+                    {
+                        isUsersPost && (
+                            <>
+                                <Link to={`/post_edit/${post?.id}`}>
+                                    <button className="btn btn-outline"><i className="fas fa-edit"></i>Редактировать</button>
+                                </Link>
+                                <button className="btn btn-danger" onClick={delete_post}><i className="fas fa-trash"></i>Удалить</button> 
+                            </>
+                        )
+                    }
                 </div>
             </div>
         </div>

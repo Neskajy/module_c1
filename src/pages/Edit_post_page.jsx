@@ -13,20 +13,21 @@ export default function Edit_post_page() {
     const [errors, setErrors] = useState(null);
 
     const get_post = async (post_id) => {
-        const response = await $fetch(`api-of/posts?id=${post_id}`, {
+        const response = await $fetch(`api-of/posts`, {
             method: "GET",
             body: {
                 id: post_id
             }
-        }) // короче я забил хуй потому что апишка возвращает все посты по этому роуту а не один я не помню какой там роут или он не сделан. похуй
+        })
 
-        console.log(response)
+        return response?.data?.find(post => +post_id === post?.id)
     }
 
     useEffect(() => {
         async function getData() {
             const data = await get_post(post_id);
             setCurrentPost(data)
+            console.log(data) // а тут undefined
         }
         getData()
     }, [])
@@ -36,9 +37,18 @@ export default function Edit_post_page() {
 
         const formData = new FormData(form.current);
 
-        const response = await $fetch("api-of/posts", {
-            "method": "POST",
-            body: formData
+        let json = {}
+        for (let [key, value] of formData) {
+            if (key !== "img") {
+                json[key] = value
+            }
+        }
+
+        json = JSON.stringify(json)
+
+        const response = await $fetch(`api-of/posts/${post_id}`, {
+            "method": "PATCH",
+            body: json
         })
 
         if (response?.errors) {
@@ -48,7 +58,7 @@ export default function Edit_post_page() {
 
         console.log(response)
 
-        alert("Пост успешно создан!")
+        alert("Пост изменен!")
     }
 
 
@@ -59,13 +69,13 @@ export default function Edit_post_page() {
                 <form id="create-post-form" ref={form} onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="post-title">Заголовок</label>
-                        <input type="text" id="post-title" className="form-control" placeholder={currentPost ? currentPost?.data?.title : "Введите заголовок"} name="title"/>
-                        <div className="error-message"><i className="fas fa-exclamation-circle"></i>{errors?.message}</div>
+                        <input type="text" id="post-title" className="form-control" name="title" defaultValue={currentPost?.title}/>
+                        <div className="error-message"><i className="fas fa-exclamation-circle"></i>{errors?.title}</div>
                     </div>
                     <div className="form-group">
                         <label htmlFor="post-text">Текст публикации</label>
-                        <textarea id="post-text" className="form-control" rows="5" placeholder="Введите текст публикации" name="description"></textarea>
-                        <div className="error-message"><i className="fas fa-exclamation-circle"></i>{errors?.message}</div>
+                        <textarea id="post-text" className="form-control" rows="5" placeholder="Введите текст публикации" name="description" defaultValue={currentPost?.description}></textarea>
+                        <div className="error-message"><i className="fas fa-exclamation-circle"></i>{errors?.description}</div>
                     </div>
                     <div className="form-group">
                         <label htmlFor="post-image">Изображение (опционально)</label>
@@ -76,7 +86,7 @@ export default function Edit_post_page() {
                                 <span>Перетащите изображение сюда или нажмите для выбора</span>
                             </label>
                         </div>
-                        <div className="error-message"><i className="fas fa-exclamation-circle"></i>{errors?.message}</div>
+                        <div className="error-message"><i className="fas fa-exclamation-circle"></i>{errors?.img}</div>
                     </div>
                     <div className="form-group text-right">
                         <button type="button" className="btn btn-outline"><i className="fas fa-times"></i> Отмена</button>
